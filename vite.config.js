@@ -6,7 +6,8 @@ export default defineConfig({
   preview: {
     port: process.env.PORT || 3000,
     host: '0.0.0.0',
-    strictPort: false
+    strictPort: false,
+    allowedHosts: ['stock-analyzer-fdkg.onrender.com']
   },
   server: {
     port: 3000,
