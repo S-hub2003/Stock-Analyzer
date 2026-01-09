@@ -1,0 +1,652 @@
+.trading-signals-container {
+  position: relative;
+}
+
+.help-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid #1e3a5f;
+  border-radius: 6px;
+  color: #a0aec0;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 36px;
+  height: 36px;
+}
+
+.help-toggle-btn:hover {
+  border-color: #00d4aa;
+  color: #00d4aa;
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.signals-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #141a2e;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  min-width: 400px;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.signals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #1e3a5f;
+  position: sticky;
+  top: 0;
+  background: #141a2e;
+  z-index: 1;
+}
+
+.signals-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.signals-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.close-signals-btn {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.close-signals-btn:hover {
+  color: #ff6b6b;
+}
+
+.signals-content {
+  padding: 1.5rem;
+}
+
+.overall-signal {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 2px solid;
+}
+
+.signal-buy {
+  background: rgba(0, 212, 170, 0.1);
+  border-color: #00d4aa;
+}
+
+.signal-sell {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: #ff6b6b;
+}
+
+.signal-hold {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: #ffc107;
+}
+
+.signal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 212, 170, 0.2);
+  flex-shrink: 0;
+}
+
+.signal-icon svg {
+  color: #00d4aa;
+}
+
+.signal-main {
+  flex: 1;
+}
+
+.signal-main h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.signal-main p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #a0aec0;
+  line-height: 1.5;
+}
+
+.stop-loss-section,
+.detailed-signals,
+.trading-tips {
+  margin-bottom: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.section-header svg {
+  color: #ffc107;
+}
+
+.stop-loss-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.stop-loss-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: #0a0e27;
+  border: 1px solid #1e3a5f;
+  border-radius: 6px;
+}
+
+.stop-loss-item .label {
+  font-size: 0.8rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.stop-loss-item .value {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.stop-loss-tip {
+  padding: 0.75rem;
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 3px solid #ffc107;
+  border-radius: 4px;
+}
+
+.stop-loss-tip p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ffc107;
+  line-height: 1.5;
+}
+
+.signals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.signal-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #0a0e27;
+  border-radius: 6px;
+  border-left: 3px solid;
+}
+
+.signal-positive {
+  border-left-color: #00d4aa;
+}
+
+.signal-negative {
+  border-left-color: #ff6b6b;
+}
+
+.signal-warning {
+  border-left-color: #ffc107;
+}
+
+.signal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+.signal-positive .signal-dot {
+  color: #00d4aa;
+}
+
+.signal-negative .signal-dot {
+  color: #ff6b6b;
+}
+
+.signal-warning .signal-dot {
+  color: #ffc107;
+}
+
+.signal-info strong {
+  display: block;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.signal-info p {
+  margin: 0;
+  color: #a0aec0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.trading-tips h4 {
+  margin-bottom: 0.75rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.trading-tips ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.trading-tips li {
+  margin-bottom: 0.5rem;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.disclaimer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.disclaimer svg {
+  color: #ff6b6b;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.disclaimer p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #ff6b6b;
+  line-height: 1.5;
+}
+
+.disclaimer strong {
+  display: inline;
+}
+
+/* Live Predictions Section */
+.live-predictions-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e3a5f;
+}
+
+.predictions-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.predictions-header h4 {
+  color: #00d4aa;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.confidence-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.confidence-high {
+  background: rgba(0, 212, 170, 0.2);
+  color: #00d4aa;
+  border: 1px solid #00d4aa;
+}
+
+.confidence-medium {
+  background: rgba(255, 167, 38, 0.2);
+  color: #ffa726;
+  border: 1px solid #ffa726;
+}
+
+.confidence-low {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+.prediction-targets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.target-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: #0f1624;
+  border-left: 3px solid;
+}
+
+.target-item.bullish {
+  border-left-color: #00d4aa;
+}
+
+.target-item.bearish {
+  border-left-color: #ff6b6b;
+}
+
+.target-item svg {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.target-item.bullish svg {
+  color: #00d4aa;
+}
+
+.target-item.bearish svg {
+  color: #ff6b6b;
+}
+
+.target-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.target-label {
+  color: #718096;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.target-value {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.target-change {
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+.target-item.bullish .target-change {
+  color: #00d4aa;
+}
+
+.target-item.bearish .target-change {
+  color: #ff6b6b;
+}
+
+.daily-predictions {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #0f1624;
+  border-radius: 6px;
+  border: 1px solid #1e3a5f;
+}
+
+.daily-predictions h5 {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.predictions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prediction-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #141a2e;
+  border-radius: 4px;
+}
+
+.day-label {
+  color: #718096;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.day-price {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.day-price.positive {
+  color: #00d4aa;
+}
+
+.day-price.negative {
+  color: #ff6b6b;
+}
+
+.day-change {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.prediction-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 167, 38, 0.1);
+  border: 1px solid rgba(255, 167, 38, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.prediction-note svg {
+  flex-shrink: 0;
+  color: #ffa726;
+  margin-top: 0.1rem;
+}
+
+.prediction-note p {
+  margin: 0;
+  color: #ffa726;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Timing Predictions Section */
+.timing-predictions {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #0f1624;
+  border-radius: 6px;
+  border: 1px solid #1e3a5f;
+}
+
+.timing-predictions h5 {
+  color: #00d4aa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.timing-predictions h6 {
+  color: #a0aec0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.timing-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  background: #141a2e;
+  border-left: 3px solid;
+}
+
+.timing-item.growth {
+  border-left-color: #00d4aa;
+}
+
+.timing-item.decline {
+  border-left-color: #ff6b6b;
+}
+
+.timing-item.entry {
+  border-left-color: #42a5f5;
+}
+
+.timing-item.exit {
+  border-left-color: #ffa726;
+}
+
+.timing-item svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.timing-item.growth svg {
+  color: #00d4aa;
+}
+
+.timing-item.decline svg {
+  color: #ff6b6b;
+}
+
+.timing-item.entry svg {
+  color: #42a5f5;
+}
+
+.timing-item.exit svg {
+  color: #ffa726;
+}
+
+.timing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.timing-info strong {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.timing-info span {
+  color: #a0aec0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.period-predictions {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #1e3a5f;
+}
+
+.period-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #141a2e;
+  border-radius: 4px;
+  border-left: 3px solid;
+}
+
+.period-item.growth-period {
+  border-left-color: #00d4aa;
+}
+
+.period-item.decline-period {
+  border-left-color: #ff6b6b;
+}
+
+.period-range {
+  color: #718096;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.period-change {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.period-change.positive {
+  color: #00d4aa;
+}
+
+.period-change.negative {
+  color: #ff6b6b;
+}
+

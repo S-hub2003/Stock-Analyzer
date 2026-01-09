@@ -1,0 +1,139 @@
+.date-calendar {
+  background: #141a2e;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 320px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-nav-btn {
+  background: transparent;
+  border: 1px solid #1e3a5f;
+  color: #718096;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.calendar-nav-btn:hover {
+  background: #1e3a5f;
+  border-color: #00d4aa;
+  color: #00d4aa;
+}
+
+.calendar-month-year {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.weekday-header {
+  color: #718096;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.calendar-day .day-number {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.calendar-day:hover:not(.unavailable):not(.other-month) {
+  background: #1e3a5f;
+  border-color: #00d4aa;
+}
+
+.calendar-day.other-month {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.calendar-day.other-month .day-number {
+  color: #718096;
+}
+
+.calendar-day.unavailable {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.calendar-day.unavailable .day-number {
+  color: #4a5568;
+}
+
+.calendar-day.selected {
+  background: #00d4aa;
+  border-color: #00d4aa;
+}
+
+.calendar-day.selected .day-number {
+  color: #0a0e27;
+  font-weight: 700;
+}
+
+.calendar-day.today:not(.selected) {
+  border: 2px solid #00d4aa;
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.calendar-day.today:not(.selected) .day-number {
+  color: #00d4aa;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .date-calendar {
+    padding: 1rem;
+    min-width: 100%;
+  }
+
+  .calendar-day .day-number {
+    font-size: 0.8rem;
+  }
+
+  .calendar-month-year {
+    font-size: 1rem;
+  }
+}

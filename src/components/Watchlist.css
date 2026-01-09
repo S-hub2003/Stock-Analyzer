@@ -1,0 +1,177 @@
+.watchlist {
+  width: 280px;
+  background: #141a2e;
+  border-right: 1px solid #1e3a5f;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.watchlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.watchlist-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.add-btn {
+  background: #00d4aa;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-btn:hover {
+  background: #00b894;
+  transform: scale(1.05);
+}
+
+.add-form {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  color: #718096;
+}
+
+.stock-input {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  background: #0a0e27;
+  border: 1px solid #1e3a5f;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.stock-input:focus {
+  outline: none;
+  border-color: #00d4aa;
+}
+
+.watchlist-items {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.watchlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+  background: #0a0e27;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.watchlist-item:hover {
+  background: #1e3a5f;
+}
+
+.watchlist-symbol {
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watchlist-item:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Scrollbar styling */
+.watchlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.watchlist::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+.watchlist::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 3px;
+}
+
+.watchlist::-webkit-scrollbar-thumb:hover {
+  background: #2e5a7f;
+}
+
+.add-form-wrapper {
+  position: relative;
+}
+
+.suggestions-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: #1e3a5f #0a0e27;
+}
+
+.suggestions-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #2e5a7f;
+}
+
+.suggestion-loading {
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .watchlist {
+    width: 100%;
+    max-height: 200px;
+  }
+}

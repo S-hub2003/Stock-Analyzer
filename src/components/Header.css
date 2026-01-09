@@ -1,0 +1,121 @@
+.header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0a0e27 100%);
+  border-bottom: 1px solid #1e3a5f;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: #00d4aa;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.market-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(30, 58, 95, 0.3);
+  border: 1px solid #1e3a5f;
+}
+
+.market-status.open {
+  border-color: #00d4aa;
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.market-status.closed {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.pulse {
+  background: #00d4aa;
+  animation: pulse 2s infinite;
+}
+
+.market-status.closed .status-dot {
+  background: #ff6b6b;
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+.status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.status-message {
+  font-weight: 600;
+  color: #fff;
+}
+
+.market-status.open .status-message {
+  color: #00d4aa;
+}
+
+.market-status.closed .status-message {
+  color: #ff6b6b;
+}
+
+.status-next {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  font-weight: normal;
+}
+
+.current-time {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-left: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid #1e3a5f;
+}
